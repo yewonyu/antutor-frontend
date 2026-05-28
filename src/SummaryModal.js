@@ -136,12 +136,13 @@ const SummaryModal = ({ isOpen, onClose, helpCountLevel1, helpCountLevel2, helpC
               </p>
               
               {reportData?.final_score !== undefined && reportData.final_score > (reportData?.base_score || 0) && (
-                <div style={{ marginTop: '20px', padding: '12px 25px', backgroundColor: 'rgba(52, 211, 153, 0.1)', border: '2px solid #6ee7b7', borderRadius: '12px', display: 'inline-block' }}>
-                  <p style={{ color: '#047857', fontSize: '0.95rem', margin: '0 0 4px 0', fontWeight: '700' }}>
-                    {language === 'ko' ? '최종 점수 (1.5배 보너스 적용)' : 'Final Score (1.5x Bonus)'}
+                <div style={{ marginTop: '20px' }}>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '1rem', margin: '0 0 5px 0', fontWeight: '500' }}>
+                    {language === 'ko' ? '최종 점수' : 'Final Score'}
                   </p>
-                  <p style={{ color: '#059669', fontSize: '2.2rem', fontWeight: '800', margin: 0 }}>
+                  <p style={{ color: 'var(--color-expert-academic)', fontSize: '2.5rem', fontWeight: '800', margin: 0 }}>
                     {reportData.final_score.toFixed(1)}
+                    <span style={{ fontSize: '1.2rem', color: '#cbd5e1', fontWeight: '400', marginLeft: '8px' }}>/ 100</span>
                   </p>
                 </div>
               )}
