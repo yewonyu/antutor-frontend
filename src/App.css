@@ -781,26 +781,63 @@
 }
 
 /* Laptop Responsive Design */
+@media (max-width: 1600px) {
+  .mission-card {
+    width: 210px;
+    padding: 28px;
+  }
+  .mission-grid {
+    gap: 25px;
+  }
+  .mission-title {
+    font-size: 2rem;
+    margin-bottom: 35px;
+  }
+}
+
 @media (max-width: 1440px) {
   .sidebar {
     width: 260px;
   }
-  
   .expert-drawer {
     width: 320px;
   }
-  
   .profile-drawer {
     width: 320px;
   }
-
   .mission-card {
-    width: 200px;
+    width: 190px;
     padding: 24px;
   }
-  
   .mission-grid {
     gap: 20px;
+  }
+  .mission-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 1366px) {
+  .sidebar {
+    width: 240px;
+  }
+  .mission-card {
+    width: 180px;
+    padding: 22px;
+  }
+  .mission-title {
+    font-size: 1.7rem;
+    margin-bottom: 25px;
+  }
+  .mission-card-icon {
+    width: 65px;
+    height: 65px;
+  }
+  .chat-history {
+    padding: 30px;
+  }
+  .chat-input-area {
+    padding: 18px 30px;
   }
 }
 
@@ -834,6 +871,72 @@
   
   .app-header {
     padding: 0 15px;
+  }
+}
+
+/* Vertical / Height Responsive for Laptops */
+@media (max-height: 850px) {
+  .app-header {
+    height: 65px;
+  }
+  .mission-title {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+  }
+  .mission-selection-container {
+    padding: 25px;
+  }
+  .mission-card {
+    padding: 20px;
+  }
+  .mission-card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 12px;
+  }
+  .mission-grid {
+    gap: 20px;
+  }
+  .chat-history {
+    padding: 24px;
+    gap: 16px;
+  }
+  .chat-input-area {
+    padding: 18px 24px;
+  }
+  .expert-panel {
+    padding: 16px 0;
+    gap: 18px;
+  }
+  .expert-icon-btn {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+@media (max-height: 720px) {
+  .mission-card-character {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  .mission-title {
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+  }
+  .mission-card {
+    padding: 15px;
+    width: 180px;
+  }
+  .mission-grid {
+    gap: 15px;
+  }
+  .app-header {
+    height: 56px;
+  }
+  .expert-icon-btn {
+    width: 46px;
+    height: 46px;
   }
 }
 
