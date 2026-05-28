@@ -40,6 +40,30 @@ function App() {
     const [missionConcepts, setMissionConcepts] = useState([]);
     const [isLoadingMissions, setIsLoadingMissions] = useState(true);
     
+    // Zoom scaling effect to ensure consistent layout across different user laptops
+    useEffect(() => {
+        const adjustScale = () => {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) return; // Do not apply on mobile
+
+            const baseWidth = 1920;
+            const currentZoom = parseFloat(document.body.style.zoom) || 1;
+            // window.innerWidth is affected by the current zoom, so we multiply by it to get the raw physical pixels
+            const actualWidth = window.innerWidth * currentZoom;
+            const newZoom = actualWidth / baseWidth;
+            
+            document.body.style.zoom = newZoom;
+        };
+
+        window.addEventListener('resize', adjustScale);
+        adjustScale(); // Apply initially
+
+        return () => {
+            window.removeEventListener('resize', adjustScale);
+            document.body.style.zoom = '1'; // Clean up
+        };
+    }, []);
+
     useEffect(() => {
         const fetchMissions = async () => {
             setIsLoadingMissions(true);
